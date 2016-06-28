@@ -31,8 +31,8 @@
           @blur.prevent="deactivate()"
           @input="pointerReset()"
           @keyup.esc="deactivate()"
-          @keyup.down="pointerForward()"
-          @keyup.up="pointerBackward()"
+          @keydown.down.prevent="pointerForward()"
+          @keydown.up.prevent="pointerBackward()"
           @keydown.enter.stop.prevent.self="addPointerElement()"
           @keydown.delete="removeLastElement()"
           class="multiselect__input"/>
